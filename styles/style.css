@@ -1,0 +1,430 @@
+/* Основные стили */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #dc7474;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.container {
+    max-width: 1920px;
+    width: 100%;
+    padding: 0 20px; /* Добавлен отступ */
+}
+
+.header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0px; /* Учитываем отступы контейнера */
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px); /* Учитываем отступы контейнера */
+    max-width: 1920px;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin: 0 30px;
+}
+
+.logophoto {
+    max-height: 100px;
+    max-width: 400px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 0 30px;
+}
+
+.button, .button-burger {
+    margin: 0 30px;
+    padding: 10px 20px;
+    border: 2px solid #9dbd00;
+    background-color: #fff;
+    color: black; /* Цвет текста черный */
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.button:hover, .button-burger:hover {
+    background-color: #9dbd00;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button-burger {
+    margin: 0 60px;
+    display: none;
+}
+
+.progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background-color: #9dbd00;
+    z-index: 1001;
+}
+
+.burger-container {
+    padding: 41px 0 0 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    top: 100px; /* Под шапкой */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999; /* Показать над основным содержанием */
+    pointer-events: none; /* Отключить взаимодействие по умолчанию */
+}
+
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 41px); /* Привязка к ширине шапки */
+    max-width: 1920px; /* Максимальная ширина */
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    pointer-events: auto; /* Включить взаимодействие при отображении */
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    text-align: center; /* Центровка текста */
+    visibility: hidden; /* Скрытие элемента */
+}
+
+.burger-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible; /* Показывать элемент при активном состоянии */
+}
+
+.burger-menu.hide {
+    opacity: 0;
+    transform: translateY(-20px);
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.burger-menu a {
+    padding: 20px 0; /* Увеличен размер текста и отступы */
+    border-bottom: 1px solid #ddd;
+    text-decoration: none;
+    color: black;
+    font-size: 1.2em; /* Увеличен размер текста */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.burger-menu a:hover {
+    background-color: #9dbd00;
+    color: white;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    width: calc(100% - 40px); /* Учитываем отступы контейнера */
+    max-width: 1920px;
+    padding: 100px 20px 50px;
+    flex: 1 1 auto;
+    margin-top: 100px; /* Отступ для фиксированной шапки */
+}
+
+.first-block {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Высота блока */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    will-change: transform;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(157, 189, 0, 0.7); /* Зеленая заливка с неполной прозрачностью */
+    z-index: 1;
+}
+
+.block-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+}
+
+.block_header {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.block_text {
+    max-width: 800px;
+    font-size: 1.5em;
+    line-height: 1.6;
+}
+
+footer {
+    background-color: #9dbd00;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 40px); /* Учитываем отступы контейнера */
+    max-width: 1920px;
+    padding: 20px 0;
+    position: relative;
+}
+
+.footer-content {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.popup {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    border-radius: 8px;
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.popup-content {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1340px) {
+    .button {
+        display: none;
+    }
+
+    .button-burger {
+        display: flex; /* Показываем на узких экранах */
+    }
+}
+
+
+/* Разделитель между блоками */
+.section-divider {
+    width: 80%;
+    height: 4px;
+    background-color: #4e2d17; /* Цвет разделителя */
+    border: none;
+    margin: 50px auto;
+}
+
+.second-block {
+    width: 100%;
+    background-color: #ffffff; /* Белый фон второго блока */
+    padding: 50px 20px;
+    margin-top: 50px; /* Добавлен margin */
+    display: flex;
+    justify-content: center;
+}
+
+.second-block .block-content {
+    max-width: 1920px;
+    width: 100%;
+    padding: 0 20px; /* Добавлен padding */
+}
+
+.second-block .block_header {
+    color: black; /* Черный цвет заголовка */
+}
+
+.services-list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.services-left, .services-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.services-left {
+    width: 48%;
+}
+
+.services-right {
+    width: 48%;
+    justify-content: space-between;
+}
+
+.service-item {
+    display: flex;
+    align-items: stretch; /* Обновлено для растягивания */
+    transition: transform 0.3s;
+    height: 100%;
+    margin-bottom: 20px; /* Добавлен нижний отступ */
+    border: 1px solid black; /* Черная граница */
+    border-radius: 12px; /* Установлен общий border-radius */
+    box-sizing: border-box;
+}
+
+.service-item:hover {
+    transform: scale(1.05);
+}
+
+.service-text, .service-image-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.service-text {
+    background-color: #4e2d17; /* Цвет заднего фона текста */
+    color: white; /* Цвет текста */
+    padding: 20px;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    text-align: left;
+    box-sizing: border-box; /* Включить padding в ширину */
+}
+
+.service-image-container {
+    background-color: white; /* Белый фон для изображений */
+    padding: 20px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    text-align: center;
+    box-sizing: border-box; /* Включить padding в ширину */
+}
+
+.services-right .service-text {
+    order: 2;
+    border-radius: 0 12px 12px 0;
+}
+
+.services-right .service-image-container {
+    order: 1;
+    border-radius: 12px 0 0 12px;
+}
+
+.service-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.service-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.service-description {
+    font-size: 1em;
+    color: #ddd; /* Более светлый цвет текста для контраста с фоном */
+}
+
+/* Добавляем стили для анимации */
+.service-item {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.service-item.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1200px) {
+    .services-list {
+        flex-direction: column;
+    }
+    .services-left, .services-right {
+        width: 100%;
+    }
+    .service-item {
+        flex-direction: column;
+        height: auto;
+        margin-bottom: 20px; /* Добавлен нижний отступ */
+        border-radius: 12px; /* Общий border-radius */
+    }
+    .service-text, .service-image-container {
+        width: 100%;
+    }
+    .service-text {
+        border-radius: 12px 12px 0 0;
+    }
+    .service-image-container {
+        border-radius: 0 0 12px 12px;
+    }
+    .services-right .service-text {
+        order: 1;
+        border-radius: 12px 12px 0 0; /* Сверху border-radius */
+    }
+    .services-right .service-image-container {
+        order: 2;
+        border-radius: 0 0 12px 12px; /* Снизу border-radius */
+        display: flex;
+        justify-content: center;
+    }
+    .service-image {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin: 0 auto; /* Центровка изображения */
+    }
+}
