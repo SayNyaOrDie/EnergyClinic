@@ -8,50 +8,38 @@
     <script defer src="scripts/burgermenu.js"></script>
     <script src="scripts/scrollAnimation.js"></script>
     <script defer src="scripts/parallax.js"></script> <!-- Подключение parallax.js -->
+    <script defer src="scripts/scrollToSection.js"></script> <!-- Подключение скрипта для якорей -->
 </head>
 <body>
+<div id="top"></div>
 <div class="wrapper">
     <div class="container">
         <header class="header">
             <div class="logo">
-                <a href="index.html" class="image-button">
+                <a href="#top" class="image-button">
                     <img class="logophoto" src="imgs/EC.png" alt="Energy Clinic Logo">
                 </a>
             </div>
             <nav class="buttons">
-                <a class="button" href="about.html">О нас</a>
-                <a class="button" href="services.html">Услуги</a>
-                <a class="button" href="findus.html">Где нас найти</a>
-                <a class="button" href="register.html">Запись</a>
+                <a class="button" href="#about">О нас</a>
+                <a class="button" href="#services">Услуги</a>
+                <a class="button" href="#specialists">Наши специалисты</a>
+                <a class="button" href="#findus">Где нас найти</a>
             </nav>
             <a class="button-burger" href="#" onclick="toggleBurgerMenu()">Меню</a>
             <div class="progress-bar" id="progress-bar"></div>
         </header>
 
-
-
         <div class="burger-container">
             <div class="burger-menu" id="burger-menu">
-                <a href="about.html">О нас</a>
-                <a href="services.html">Услуги</a>
-                <a href="findus.html">Где нас найти</a>
-                <a href="register.html">Запись</a>
+                <a href="#about">О нас</a>
+                <a href="#services">Услуги</a>
+                <a href="#specialists">Наши специалисты</a>
+                <a href="#findus">Где нас найти</a>
             </div>
         </div>
-
-
 
         <hr>
-
-
-
-        <div id="popup" class="popup">
-            <div class="popup-content">
-                <p id="popup-text">Время загрузки страницы: 0 мс</p>
-            </div>
-        </div>
-
-
 
         <main>
             <div class="first-block">
@@ -66,8 +54,27 @@
             <!-- Разделитель -->
             <hr class="section-divider">
 
-            <!-- Второй блок -->
-            <div class="second-block">
+            <!-- Блок "О нас" -->
+            <div id="about" class="about-block">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 class="block_header">О нас</h2>
+                        <p class="block_text">
+                            Energy Clinic - это современная клиника косметологии, специализирующаяся на предоставлении передовых услуг по уходу за кожей и телом. Мы гордимся нашим профессиональным подходом и использованием новейших технологий для достижения наилучших результатов для наших клиентов.
+                        </p>
+                        <p class="block_text">
+                            Наша команда состоит из высококвалифицированных специалистов с многолетним опытом работы в области косметологии. Мы стремимся к постоянному совершенствованию и следим за последними тенденциями и разработками в нашей сфере.
+                        </p>
+                    </div>
+                    <div class="about-image-container">
+                        <img class="about-image" src="imgs/tmp.jpg" alt="О нас">
+                    </div>
+                </div>
+            </div>
+
+            <hr class="section-divider">
+
+            <div id="services" class="second-block">
                 <div class="block-content">
                     <h2 class="block_header">Наши услуги</h2>
                     <div class="services-list">
@@ -121,27 +128,151 @@
                             </div>
                         </div>
                     </div>
+                    <p class="services-link">Ознакомиться с полным списком услуг вы можете по <a href="https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID" target="_blank">ссылке</a>.</p>
                 </div>
             </div>
+
+
+            <hr class="section-divider">
+
+            <!-- Блок "Наши специалисты" -->
+            <div id="specialists" class="specialists-block">
+                <h2 class="block_header">Наши специалисты</h2>
+                <div class="specialists-container">
+                    <div class="specialists-wrapper">
+                        <div class="specialists-row">
+                            <div class="specialist-item">
+                                <img src="imgs/tmp.jpg" alt="Специалист 1" class="specialist-photo">
+                                <div class="specialist-info">
+                                    <p class="specialist-name">Иванов Иван Иванович</p>
+                                    <p class="specialist-position">Дерматолог</p>
+                                </div>
+                            </div>
+                            <div class="specialist-item">
+                                <img src="imgs/tmp.jpg" alt="Специалист 2" class="specialist-photo">
+                                <div class="specialist-info">
+                                    <p class="specialist-name">Петров Петр Петрович</p>
+                                    <p class="specialist-position">Косметолог</p>
+                                </div>
+                            </div>
+                            <div class="specialist-item">
+                                <img src="imgs/tmp.jpg" alt="Специалист 3" class="specialist-photo">
+                                <div class="specialist-info">
+                                    <p class="specialist-name">Сидоров Сидор Сидорович</p>
+                                    <p class="specialist-position">Терапевт</p>
+                                </div>
+                            </div>
+                            <div class="specialist-item">
+                                <img src="imgs/tmp.jpg" alt="Специалист 4" class="specialist-photo">
+                                <div class="specialist-info">
+                                    <p class="specialist-name">Фёдоров Фёдор Фёдорович</p>
+                                    <p class="specialист-position">Хирург</p>
+                                </div>
+                            </div>
+                            <div class="specialist-item">
+                                <img src="imgs/tmp.jpg" alt="Специалист 5" class="specialist-photo">
+                                <div class="specialist-info">
+                                    <p class="specialist-name">Васильев Василий Васильевич</p>
+                                    <p class="specialist-position">Офтальмолог</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="specialists-row">
+                            <div class="specialist-item">
+                                <img src="imgs/tmp.jpg" alt="Специалист 6" class="specialist-photo">
+                                <div class="specialist-info">
+                                    <p class="specialist-name">Антонов Антон Антонович</p>
+                                    <p class="specialist-position">Педиатр</p>
+                                </div>
+                            </div>
+                            <div class="specialist-item">
+                                <img src="imgs/tmp.jpg" alt="Специалист 7" class="specialist-photo">
+                                <div class="specialist-info">
+                                    <p class="specialist-name">Михайлов Михаил Михайлович</p>
+                                    <p class="specialist-position">Кардиолог</p>
+                                </div>
+                            </div>
+                            <div class="specialist-item">
+                                <img src="imgs/tmp.jpg" alt="Специалист 8" class="specialist-photo">
+                                <div class="specialist-info">
+                                    <p class="specialist-name">Николаев Николай Николаевич</p>
+                                    <p class="specialist-position">Невролог</p>
+                                </div>
+                            </div>
+                            <div class="specialist-item">
+                                <img src="imgs/tmp.jpg" alt="Специалист 9" class="specialist-photo">
+                                <div class="specialist-info">
+                                    <p class="specialist-name">Степанов Степан Степанович</p>
+                                    <p class="specialist-position">Гинеколог</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <hr class="section-divider">
+
+            <div id="findus" class="findus-block">
+
+                <div class="findus-content">
+                    <div class="findus-text">
+                        <h2 class="block_header">Где нас найти</h2>
+                        <p class="block_text">Мы находимся по адресу:</p>
+                        <p class="block_text">г. Уфа, ул. Большая Московская, 15</p>
+                        <p class="block_text">Телефон для связи: +1 (123) 456-7890</p>
+                        <p class="block_text"><a href="https://google.com">Связаться с нами</a></p>
+                    </div>
+                    <div class="findus-map">
+                        <div id="map" style="width: 100%; height: 400px;"></div>
+                    </div>
+                    <div class="findus-photo">
+                        <img src="imgs/tmp.jpg" alt="Clinic Photo" class="clinic-photo">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Подключение API Яндекс.Карт -->
+            <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+            <script>
+                ymaps.ready(init);
+                function init() {
+                    var myMap = new ymaps.Map("map", {
+                        center: [54.712732, 55.978804], // Координаты Уфы
+                        zoom: 17
+                    });
+
+                    var myPlacemark = new ymaps.Placemark([54.712732, 55.978804], {
+                        hintContent: 'Energy Clinic',
+                        balloonContent: 'г. Уфа, ул. Большая Московская, 15'
+                    });
+
+                    myMap.geoObjects.add(myPlacemark);
+                }
+            </script>
+
         </main>
 
-
-
-
-
-
-
-
-
-
-        <footer>
+        <footer class="footer">
             <div class="footer-content">
-                <p>Контакты: <a href="mailto:contact@energyclinic.com">contact@energyclinic.com</a></p>
-                <p>Телефон: +1 (123) 456-7890</p>
-                <p><a href="https://google.com">Связаться с нами</a></p>
+                <div class="footer-row">
+                    <a href="#" class="footer-link">Ссылка 1</a>
+                    <a href="#" class="footer-link">Ссылка 2</a>
+                    <a href="#" class="footer-link">Ссылка 3</a>
+                </div>
+                <div class="footer-row">
+                    <a href="#" class="footer-link">Ссылка 4</a>
+                    <a href="#" class="footer-link">Ссылка 5</a>
+                    <a href="#" class="footer-link">Ссылка 6</a>
+                </div>
+                <div class="footer-row">
+                    <a href="#" class="footer-link">Ссылка 7</a>
+                    <a href="#" class="footer-link">Ссылка 8</a>
+                    <a href="#" class="footer-link">Ссылка 9</a>
+                </div>
             </div>
         </footer>
-
 
 
     </div>
