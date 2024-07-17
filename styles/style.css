@@ -33,7 +33,7 @@ html, body {
 .container {
     max-width: 1920px;
     width: 100%;
-    padding: 0 20px; /* Добавлен отступ */
+    padding: 0 20px;
 }
 
 .header {
@@ -476,6 +476,11 @@ footer {
 
 /* Responsive Styles */
 @media screen and (max-width: 1200px) {
+
+    .container{
+        padding: 0;
+    }
+
     .services-list {
         flex-direction: column;
     }
@@ -539,45 +544,7 @@ footer {
 }
 
 /* Responsive Styles */
-@media screen and (max-width: 1200px) {
-    .services-list {
-        flex-direction: column;
-    }
-    .services-left, .services-right {
-        width: 100%;
-    }
-    .service-item {
-        flex-direction: column;
-        height: auto;
-        margin-bottom: 20px; /* Добавлен нижний отступ */
-        border-radius: 12px; /* Общий border-radius */
-    }
-    .service-text, .service-image-container {
-        width: 100%;
-    }
-    .service-text {
-        border-radius: 12px 12px 0 0;
-    }
-    .service-image-container {
-        border-radius: 0 0 12px 12px;
-    }
-    .services-right .service-text {
-        order: 1;
-        border-radius: 12px 12px 0 0; /* Сверху border-radius */
-    }
-    .services-right .service-image-container {
-        order: 2;
-        border-radius: 0 0 12px 12px; /* Снизу border-radius */
-        display: flex;
-        justify-content: center;
-    }
-    .service-image {
-        max-width: 100%;
-        height: auto;
-        border-radius: 8px;
-        margin: 0 auto; /* Центровка изображения */
-    }
-}
+
 
 footer {
     background-color: #4e2d17;
