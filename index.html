@@ -9,6 +9,7 @@
     <script src="scripts/scrollAnimation.js"></script>
     <script defer src="scripts/parallax.js"></script> <!-- Подключение parallax.js -->
     <script defer src="scripts/scrollToSection.js"></script> <!-- Подключение скрипта для якорей -->
+    <script defer src="scripts/modal.js"></script> <!-- Подключение скрипта для модальных окон -->
 </head>
 <body>
 <div id="top"></div>
@@ -79,7 +80,7 @@
                     <h2 class="block_header">Наши услуги</h2>
                     <div class="services-list">
                         <div class="services-left">
-                            <div class="service-item">
+                            <div class="service-item" data-modal="modal1">
                                 <div class="service-text">
                                     <h3 class="service-title">Уход за кожей</h3>
                                     <p class="service-description">Профессиональные процедуры для улучшения состояния вашей кожи. Мы предлагаем широкий спектр услуг, включая очистку, увлажнение, питание и восстановление кожи. Наши специалисты используют только высококачественные и безопасные средства.</p>
@@ -88,7 +89,7 @@
                                     <img src="imgs/tmp.jpg" alt="Service 1" class="service-image">
                                 </div>
                             </div>
-                            <div class="service-item">
+                            <div class="service-item" data-modal="modal2">
                                 <div class="service-text">
                                     <h3 class="service-title">Лазерная терапия</h3>
                                     <p class="service-description">Современные методы лазерного лечения для омоложения и оздоровления. Лазерная терапия эффективно устраняет пигментные пятна, рубцы, морщины и другие кожные дефекты. Мы используем новейшее оборудование и передовые технологии для достижения лучших результатов.</p>
@@ -97,7 +98,7 @@
                                     <img src="imgs/tmp.jpg" alt="Service 2" class="service-image">
                                 </div>
                             </div>
-                            <div class="service-item">
+                            <div class="service-item" data-modal="modal3">
                                 <div class="service-text">
                                     <h3 class="service-title">Ароматерапия</h3>
                                     <p class="service-description">Расслабляющие процедуры с использованием эфирных масел. Мы предлагаем различные сеансы ароматерапии для снятия стресса, улучшения настроения и общего оздоровления организма.</p>
@@ -108,7 +109,7 @@
                             </div>
                         </div>
                         <div class="services-right">
-                            <div class="service-item">
+                            <div class="service-item" data-modal="modal4">
                                 <div class="service-image-container">
                                     <img src="imgs/tmp.jpg" alt="Service 3" class="service-image">
                                 </div>
@@ -117,7 +118,7 @@
                                     <p class="service-description">Расслабляющие массажи и спа-процедуры для вашего комфорта. Наши квалифицированные массажисты помогут вам снять стресс, улучшить кровообращение и общее самочувствие. В наших спа-программах используются натуральные масла и ароматы для максимального расслабления и удовольствия.</p>
                                 </div>
                             </div>
-                            <div class="service-item">
+                            <div class="service-item" data-modal="modal5">
                                 <div class="service-image-container">
                                     <img src="imgs/tmp.jpg" alt="Service 5" class="service-image">
                                 </div>
@@ -131,7 +132,6 @@
                     <p class="services-link">Ознакомиться с полным списком услуг вы можете по <a href="https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID" target="_blank">ссылке</a>.</p>
                 </div>
             </div>
-
 
             <hr class="section-divider">
 
@@ -166,7 +166,7 @@
                                 <img src="imgs/tmp.jpg" alt="Специалист 4" class="specialist-photo">
                                 <div class="specialist-info">
                                     <p class="specialist-name">Фёдоров Фёдор Фёдорович</p>
-                                    <p class="specialист-position">Хирург</p>
+                                    <p class="specialist-position">Хирург</p>
                                 </div>
                             </div>
                             <div class="specialist-item">
@@ -211,11 +211,9 @@
                 </div>
             </div>
 
-
             <hr class="section-divider">
 
             <div id="findus" class="findus-block">
-
                 <div class="findus-content">
                     <div class="findus-text">
                         <h2 class="block_header">Где нас найти</h2>
@@ -252,6 +250,19 @@
                 }
             </script>
 
+            <!-- Модальные окна для услуг -->
+            <div id="serviceModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Название услуги</h2>
+                        <span class="close" onclick="closeModal()">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="service-table"></div>
+                    </div>
+                </div>
+            </div>
+
         </main>
 
         <footer class="footer">
@@ -273,7 +284,6 @@
                 </div>
             </div>
         </footer>
-
 
     </div>
 </div>

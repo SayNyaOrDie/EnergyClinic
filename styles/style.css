@@ -11,6 +11,7 @@ body {
     justify-content: center;
     align-items: flex-start;
 }
+
 /* Стили для якорей */
 .anchor {
     display: block;
@@ -18,7 +19,6 @@ body {
     top: -100px;
     visibility: hidden;
 }
-
 
 html, body {
     height: 100%;
@@ -338,6 +338,28 @@ footer {
     margin-bottom: 20px;
 }
 
+/* Responsive Styles */
+@media screen and (max-width: 1200px) {
+    .about-content {
+        flex-direction: column;
+    }
+    .about-text {
+        width: 100%;
+        transform: translateX(0); /* Убрать сдвиг */
+    }
+    .about-image-container {
+        width: 100%;
+        margin-top: 20px;
+        transform: translateX(0); /* Убрать сдвиг */
+    }
+    .block_header {
+        font-size: 3em;
+    }
+    .block_text {
+        font-size: 1.5em;
+    }
+}
+
 /* Разделитель между блоками */
 .section-divider {
     width: 80%;
@@ -518,6 +540,20 @@ footer {
         border-radius: 8px;
         margin: 0 auto; /* Центровка изображения */
     }
+
+    .block_header {
+        font-size: 3em;
+    }
+
+    .block_text,
+    .service-description {
+        font-size: 1.5em;
+    }
+
+    .service-item:hover {
+        transform: none;
+        box-shadow: none;
+    }
 }
 
 
@@ -668,6 +704,20 @@ footer {
         width: 100%;
         margin-bottom: 20px;
     }
+
+    .block_header {
+        font-size: 3em;
+    }
+
+    .specialist-name,
+    .specialist-position {
+        font-size: 1.5em;
+    }
+
+    .specialist-item:hover {
+        transform: none;
+        box-shadow: none;
+    }
 }
 
 /* Стили для блока "Где нас найти" */
@@ -735,8 +785,33 @@ footer {
     .findus-photo {
         margin-top: 20px;
     }
+
+    .block_header {
+        font-size: 3em;
+    }
+
+    .block_text {
+        font-size: 1.5em;
+    }
 }
 
-
-
-
+/* Responsive Styles */
+@media screen and (max-width: 1200px) {
+    .service-item:hover,
+    .specialist-item:hover,
+    .button:hover,
+    .button-burger:hover,
+    .burger-menu a:hover,
+    .footer-link:hover {
+        transform: none;
+        box-shadow: none;
+        background-color: inherit; /* Убираем изменение фона при наведении */
+        color: inherit; /* Убираем изменение цвета при наведении */
+    }
+    .block_header {
+        font-size: 3em;
+    }
+    .block_text {
+        font-size: 1.5em;
+    }
+}
